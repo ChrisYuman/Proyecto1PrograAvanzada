@@ -6,8 +6,6 @@
 int main()
 {
     std::cout << "Chris y Pablo!\n";
-    std::cout << "Hola mundo\n";
-
 }
 
 
