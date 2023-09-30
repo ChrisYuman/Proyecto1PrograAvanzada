@@ -21,7 +21,7 @@ int main()
     {
         case 1: 
             system("cls"); //limpiar la pantalla 
-            cout << "Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa\n" << endl;
+            cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
             break; 
                         case 2:
                         menu2:
@@ -62,9 +62,9 @@ int main()
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 6:
-                                cout << "Regresar al menu principal\n" << endl;
-                                char elegir; 
+                                
                                 cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
+                                char elegir; 
                                 cin >> elegir; 
                                 if (elegir == 's') {system("cls");  goto menu1; }
                                 else { goto menu2; }
