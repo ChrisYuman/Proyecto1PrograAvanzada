@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cancion.cpp" />
+    <ClCompile Include="CD.cpp" />
     <ClCompile Include="Proyecto1PrograAvanzada.cpp" />
+    <ClCompile Include="ReproductorCD.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cancion.h" />
+    <ClInclude Include="CD.h" />
+    <ClInclude Include="ReproductorCD.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
