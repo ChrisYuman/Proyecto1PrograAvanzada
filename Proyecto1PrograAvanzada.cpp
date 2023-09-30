@@ -62,13 +62,13 @@ int main()
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 6:
-                                
                                 cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
                                 char elegir; 
                                 cin >> elegir; 
                                 if (elegir == 's') {system("cls");  goto menu1; }
                                 else { goto menu2; }
                                 break;
+
                         default:
                             goto menu2;
                             break;
