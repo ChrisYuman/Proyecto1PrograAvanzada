@@ -5,12 +5,16 @@
 
 class Cancion {
 public:
-    Cancion(const std::string& nombre, int duracion);
+    Cancion(const std::string& nombre, const std::string& artista, const std::string& duracion);
+
     std::string getNombre() const;
-    int getDuracion() const;
+    std::string getArtista() const;
+    std::string getDuracion() const;
+
 private:
     std::string nombre;
-    int duracion;
+    std::string artista;
+    std::string duracion;
 };
 
-#endif // CANCION_H
+#endif  // CANCION_H

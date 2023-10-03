@@ -2,13 +2,28 @@
 //
 
 #include <iostream>
+#include "ReproductorCD.cpp"
 using namespace std; 
 
 int main()
 {
+
     cout << "Proyecto 1 programacion avanzada\n" << endl; 
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
-    
+    ReproductorCD reproductor;
+
+    // Solicitar al usuario la ruta de la carpeta de respaldos
+    std::string carpeta;
+    std::cout << "Ingrese la ruta de la carpeta de respaldos: ";
+    std::cin >> carpeta;
+
+    // Cargar los respaldos desde la carpeta
+    reproductor.cargarRespaldosDesdeCarpeta(carpeta);
+
+    // Imprimir los discos cargados
+    reproductor.imprimirDiscos();
+
+    return 0;
     menu1:
     cout << "Menu principal" << endl; 
     cout << "Escoga una de las opciones que se presentan a continuacion" << endl; 
@@ -22,6 +37,7 @@ int main()
         case 1: 
             system("cls"); //limpiar la pantalla 
             cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
+           
             break; 
                         case 2:
                         menu2:

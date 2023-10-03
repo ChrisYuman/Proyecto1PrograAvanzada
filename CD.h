@@ -8,13 +8,16 @@
 class CD {
 public:
     CD(const std::string& nombre);
+
+    void agregarCancion(const Cancion& cancion);
+
     std::string getNombre() const;
     int getCantidadCanciones() const;
-    void agregarCancion(const Cancion& cancion);
+    const std::vector<Cancion>& getCanciones() const;
+
 private:
     std::string nombre;
-    int cantidadCanciones;
     std::vector<Cancion> canciones;
 };
 
-#endif // CD_H
+#endif  // CD_H

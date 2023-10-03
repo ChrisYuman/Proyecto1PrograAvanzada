@@ -1,11 +1,16 @@
 #include "Cancion.h"
 
-Cancion::Cancion(const std::string& nombre, int duracion) : nombre(nombre), duracion(duracion) {}
+Cancion::Cancion(const std::string& nombre, const std::string& artista, const std::string& duracion)
+    : nombre(nombre), artista(artista), duracion(duracion) {}
 
 std::string Cancion::getNombre() const {
     return nombre;
 }
 
-int Cancion::getDuracion() const {
+std::string Cancion::getArtista() const {
+    return artista;
+}
+
+std::string Cancion::getDuracion() const {
     return duracion;
 }

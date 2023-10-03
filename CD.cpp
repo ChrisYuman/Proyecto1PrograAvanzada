@@ -1,16 +1,19 @@
 #include "CD.h"
 
-CD::CD(const std::string& nombre) : nombre(nombre), cantidadCanciones(0) {}
+CD::CD(const std::string& nombre) : nombre(nombre) {}
+
+void CD::agregarCancion(const Cancion& cancion) {
+    canciones.push_back(cancion);
+}
 
 std::string CD::getNombre() const {
     return nombre;
 }
 
 int CD::getCantidadCanciones() const {
-    return cantidadCanciones;
+    return canciones.size();
 }
 
-void CD::agregarCancion(const Cancion& cancion) {
-    canciones.push_back(cancion);
-    cantidadCanciones++;
+const std::vector<Cancion>& CD::getCanciones() const {
+    return canciones;
 }
