@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "ReproductorCD.cpp"
+#include "ReproductorCD.h"
 using namespace std; 
 
 int main()
@@ -13,16 +13,15 @@ int main()
     ReproductorCD reproductor;
 
     //// Solicitar al usuario la ruta de la carpeta de respaldos
-    //std::string carpeta;
-    //std::cout << "Ingrese la ruta de la carpeta de respaldos: ";
-    //std::cin >> carpeta;
+    string carpeta;
+    cout << "Ingrese la ruta de la carpeta de respaldos: ";
+    cin >> carpeta;
 
     //// Cargar los respaldos desde la carpeta
-    //reproductor.cargarRespaldosDesdeCarpeta(carpeta);
+    reproductor.cargarRespaldosDesdeCarpeta(carpeta);
 
-    //// Imprimir los discos cargados
-    //reproductor.imprimirDiscos();
-
+    ////Imprimir los discos cargados
+    reproductor.imprimirDiscos();
     return 0;
     menu1:
     cout << "Menu principal" << endl; 
@@ -37,6 +36,9 @@ int main()
         case 1: 
             system("cls"); //limpiar la pantalla 
             cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
+            
+           
+
            
             break; 
                         case 2:
