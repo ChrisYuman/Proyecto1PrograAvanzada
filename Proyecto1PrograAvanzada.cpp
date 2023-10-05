@@ -42,11 +42,7 @@ int main()
             ////Imprimir los discos cargados
             reproductorcr->imprimirDiscos();
 
-            cout << "Desea agreagr mas discos? s=Si, n= No" << endl;
-            char elegir;
-            cin >> elegir;
-            if (elegir == 's') { system("cls");  goto masdisc; }
-            else { system("cls"); goto menu1; }
+            
             break; 
 
                         case 2:
