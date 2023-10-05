@@ -48,8 +48,7 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
 void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
     // Abre el archivo .txt para lectura
     std::ifstream archivo(nombreArchivo);
-
-    if (!archivo) {
+    if (!archivo.is_open()) {
         std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
         return;
     }
@@ -59,23 +58,26 @@ void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
     CD cd(nombreCd); // Crea un nuevo CD
 
     std::string linea;
+    while (std::getline(archivo, linea)) {
+        std::cout << "Linea leida: " << linea << std::endl;
+        // Continúa con el procesamiento de la línea
+    }
 
     while (std::getline(archivo, linea)) {
         // Divide la línea en nombre, artista y duración utilizando '||' como separador
         std::string delimiter = "||";
         size_t pos = 0;
         std::string token;
-        std::vector<std::string> tokens;
+        std::vector<std::string> tokens;  // Declaración del vector
 
         while ((pos = linea.find(delimiter)) != std::string::npos) {
             token = linea.substr(0, pos);
             tokens.push_back(token);
             linea.erase(0, pos + delimiter.length());
         }
-
+        tokens.push_back(linea);  // Añade la última parte
         if (tokens.size() == 3) {
-            Cancion cancion(tokens[0], tokens[1], tokens[2]);
-            cd.agregarCancion(cancion);
+            // Procesa las partes
         }
         else {
             std::cerr << "Formato incorrecto en una línea del archivo: " << nombreArchivo << std::endl;
