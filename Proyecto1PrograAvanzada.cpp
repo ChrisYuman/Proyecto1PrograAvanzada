@@ -12,16 +12,16 @@ int main()
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
     ReproductorCD reproductor;
 
-    // Solicitar al usuario la ruta de la carpeta de respaldos
-    std::string carpeta;
-    std::cout << "Ingrese la ruta de la carpeta de respaldos: ";
-    std::cin >> carpeta;
+    //// Solicitar al usuario la ruta de la carpeta de respaldos
+    //std::string carpeta;
+    //std::cout << "Ingrese la ruta de la carpeta de respaldos: ";
+    //std::cin >> carpeta;
 
-    // Cargar los respaldos desde la carpeta
-    reproductor.cargarRespaldosDesdeCarpeta(carpeta);
+    //// Cargar los respaldos desde la carpeta
+    //reproductor.cargarRespaldosDesdeCarpeta(carpeta);
 
-    // Imprimir los discos cargados
-    reproductor.imprimirDiscos();
+    //// Imprimir los discos cargados
+    //reproductor.imprimirDiscos();
 
     return 0;
     menu1:
