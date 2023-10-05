@@ -12,17 +12,7 @@ int main()
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
     ReproductorCD reproductor;
 
-    //// Solicitar al usuario la ruta de la carpeta de respaldos
-    string carpeta;
-    cout << "Ingrese la ruta de la carpeta de respaldos: ";
-    cin >> carpeta;
-
-    //// Cargar los respaldos desde la carpeta
-    reproductor.cargarRespaldosDesdeCarpeta(carpeta);
-
-    ////Imprimir los discos cargados
-    reproductor.imprimirDiscos();
-    return 0;
+    
     menu1:
     cout << "Menu principal" << endl; 
     cout << "Escoga una de las opciones que se presentan a continuacion" << endl; 
@@ -31,16 +21,34 @@ int main()
     cout << "3. Salir del programa" << endl;
     int opcion;
     cin >> opcion; 
+    ReproductorCD* reproductorcr = &reproductor;
+    string carpeta;
+
     switch (opcion) 
     {
         case 1: 
+            masdisc:
             system("cls"); //limpiar la pantalla 
             cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
             
-           
+            //// Solicitar al usuario la ruta de la carpeta de respaldos
+            
+            cout << "Ingrese la ruta de la carpeta de respaldos: ";
+            cin >> carpeta;
 
-           
+            //// Cargar los respaldos desde la carpeta
+            reproductorcr->cargarRespaldosDesdeCarpeta(carpeta);
+
+            ////Imprimir los discos cargados
+            reproductorcr->imprimirDiscos();
+
+            cout << "Desea agreagr mas discos? s=Si, n= No" << endl;
+            char elegir;
+            cin >> elegir;
+            if (elegir == 's') { system("cls");  goto masdisc; }
+            else { system("cls"); goto menu1; }
             break; 
+
                         case 2:
                         menu2:
                         system("cls"); 
