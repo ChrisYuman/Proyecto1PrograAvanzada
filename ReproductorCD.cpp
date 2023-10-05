@@ -19,7 +19,7 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
     LPCWSTR patronBusqueda = L"/*.txt";
 
     // Combina la carpeta y el patrón de búsqueda en una cadena LPCWSTR
-    std::wstring carpetaConPatron = carpetaW + L"\\Thriller.txt";  // Asegúrate de agregar el patrón "*.txt" directamente
+    std::wstring carpetaConPatron = carpetaW + L"\\*.txt";  // Asegúrate de agregar el patrón "*.txt" directamente
     LPCWSTR carpetaConPatronLPCWSTR = carpetaConPatron.c_str();
 
     // Utiliza la biblioteca <windows.h> para listar archivos en el directorio
