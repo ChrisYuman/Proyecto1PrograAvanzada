@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Agregarcancion.cpp" />
     <ClCompile Include="Cancion.cpp" />
     <ClCompile Include="CD.cpp" />
     <ClCompile Include="Proyecto1PrograAvanzada.cpp" />
     <ClCompile Include="ReproductorCD.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Agregarcancion.h" />
     <ClInclude Include="Cancion.h" />
     <ClInclude Include="CD.h" />
     <ClInclude Include="ReproductorCD.h" />
