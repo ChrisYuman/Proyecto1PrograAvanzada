@@ -42,6 +42,11 @@ int main()
             ////Imprimir los discos cargados
             reproductorcr->imprimirDiscos();
 
+            cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
+            char elegir;
+            cin >> elegir;
+            if (elegir == 's') { system("cls");  goto menu1; }
+            else { system("cls"); goto menu2; }
             
             break; 
 
