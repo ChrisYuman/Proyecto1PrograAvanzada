@@ -24,7 +24,6 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
 
     // Utiliza la biblioteca <windows.h> para listar archivos en el directorio
     WIN32_FIND_DATA findFileData;
-    std::wcout << L"Carpeta con patrón: " << carpetaConPatron << std::endl;
     HANDLE hFind = FindFirstFile(carpetaConPatronLPCWSTR, &findFileData);
 
     if (hFind == INVALID_HANDLE_VALUE) {
@@ -35,10 +34,11 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
         }
         return;
     }
+
     do {
         std::wstring nombreArchivoW = findFileData.cFileName;
         std::string nombreArchivo(nombreArchivoW.begin(), nombreArchivoW.end());
-        std::string rutaCompleta = carpeta + "/" + nombreArchivo;
+        std::string rutaCompleta = carpeta + "\\" + nombreArchivo;  // Usar '\\' para la ruta
         cargarCdDesdeArchivo(rutaCompleta);
     } while (FindNextFile(hFind, &findFileData) != 0);
 
@@ -59,11 +59,6 @@ void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
 
     std::string linea;
     while (std::getline(archivo, linea)) {
-        std::cout << "Linea leida: " << linea << std::endl;
-        // Continúa con el procesamiento de la línea
-    }
-
-    while (std::getline(archivo, linea)) {
         // Divide la línea en nombre, artista y duración utilizando '||' como separador
         std::string delimiter = "||";
         size_t pos = 0;
@@ -76,8 +71,10 @@ void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
             linea.erase(0, pos + delimiter.length());
         }
         tokens.push_back(linea);  // Añade la última parte
+
         if (tokens.size() == 3) {
-            // Procesa las partes
+            Cancion cancion(tokens[0], tokens[1], tokens[2]);
+            cd.agregarCancion(cancion);
         }
         else {
             std::cerr << "Formato incorrecto en una línea del archivo: " << nombreArchivo << std::endl;
