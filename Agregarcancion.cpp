@@ -46,7 +46,7 @@ void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
             const Cancion& cancionSeleccionada = listaCanciones[opcionCancion - 1];
 
             // Agregar la canción seleccionada a la cola de reproducción (ajusta esto según tu implementación)
-            // Ejemplo: reproductor->agregarCancionALaCola(cancionSeleccionada);
+            reproductor->agregarCancionALaCola(cancionSeleccionada);
 
             std::cout << "Canción agregada a la cola de reproducción: " << cancionSeleccionada.getNombre() << std::endl;
         }
@@ -58,5 +58,6 @@ void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
         std::cout << "Opción de CD no válida." << std::endl;
     }
 }
+
 
 
