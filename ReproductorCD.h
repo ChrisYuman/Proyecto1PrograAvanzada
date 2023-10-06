@@ -30,11 +30,21 @@ public:
         return colaReproduccion;
     }
 
+    // Método para agregar una canción a la cola de reproducción
+    void agregarCancionALaCola(const Cancion& cancion) {
+        colaDeReproduccion.push_back(cancion);
+    }
+
+    // Método para obtener la cola de reproducción
+    const std::vector<Cancion>& getColaDeReproduccion() const {
+        return colaDeReproduccion;
+    }
 
     const std::vector<CD>& getListaCds() const;
 private:
     std::vector<CD> listaCds;
     std::queue<Cancion> colaReproduccion;
+    std::vector<Cancion> colaDeReproduccion;
 };
 
 #endif

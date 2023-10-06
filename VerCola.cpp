@@ -5,28 +5,29 @@
 #include "VerCola.h"
 
 
+// Constructor de la clase
+VerCola::VerCola() {
+    // Inicialización del constructor si es necesario
+}
 
-VerCola::VerCola(ReproductorCD* reproductor) : reproductor(reproductor) {}
+// Método para mostrar la cola de reproducción
+void VerCola::mostrarColaDeReproduccion(const ReproductorCD* reproductor) const {
+    const std::vector<Cancion>& colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-void VerCola::mostrarColaYUltimaCancionAgregada(const Cancion& ultimaCancionAgregada) {
-    const std::queue<Cancion>& colaReproduccion = reproductor->getColaReproduccion();
-
-    if (colaReproduccion.empty()) {
+    if (colaDeReproduccion.empty()) {
         std::cout << "La cola de reproducción está vacía." << std::endl;
     }
     else {
-        std::cout << "Canciones en la cola de reproducción:" << std::endl;
-        int i = 1;
-        std::queue<Cancion> copiaCola = colaReproduccion; // Hacemos una copia para no modificar la cola original
-        while (!copiaCola.empty()) {
-            const Cancion& cancion = copiaCola.front();
-            std::cout << i << ". " << cancion.getNombre() << " - " << cancion.getArtista() << " (" << cancion.getDuracion() << ")" << std::endl;
-            copiaCola.pop();
-            i++;
+        std::cout << "Cola de Reproducción:" << std::endl;
+        for (int i = 0; i < colaDeReproduccion.size(); i++) {
+            std::cout << i + 1 << ". " << colaDeReproduccion[i].getNombre() << std::endl;
         }
     }
-
-    std::cout << "Última canción agregada: " << ultimaCancionAgregada.getNombre() << " - " << ultimaCancionAgregada.getArtista() << " (" << ultimaCancionAgregada.getDuracion() << ")" << std::endl;
 }
+
+
+
+
+
 
 

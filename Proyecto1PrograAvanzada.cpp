@@ -14,9 +14,8 @@ int main()
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
     ReproductorCD reproductor;
     Agregarcancion agregar; 
-    VerCola verCola(reproductor);
+    VerCola vercola;
 
-    
     menu1:
     cout << "Menu principal" << endl; 
     cout << "Escoga una de las opciones que se presentan a continuacion" << endl; 
@@ -82,7 +81,7 @@ int main()
                                 break; 
                             case 2:
                                 cout << "Ver cola de reproduccion\n" << endl;
-                                verCola.mostrarCola();
+                                vercola.mostrarColaDeReproduccion(&reproductor);
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 3:

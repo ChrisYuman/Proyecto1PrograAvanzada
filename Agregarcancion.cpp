@@ -6,7 +6,6 @@ Agregarcancion::Agregarcancion() {
 }
 
 void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
-    std::cout << "Agregar Canción\n" << std::endl;
 
     // Llamar al método de ReproductorCD para obtener la lista de CDs
     const std::vector<CD>& listaCds = reproductor->getListaCds();
@@ -59,3 +58,5 @@ void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
         std::cout << "Opción de CD no válida." << std::endl;
     }
 }
+
+
