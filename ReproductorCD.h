@@ -3,6 +3,8 @@
 
 #include "CD.h"
 #include <vector>
+#include <queue> 
+#include "Cancion.h" 
 
 class ReproductorCD {
 public:
@@ -24,11 +26,15 @@ public:
             throw std::out_of_range("Índice de CD no válido");
         }
     }
+    const std::queue<Cancion>& getColaReproduccion() const {
+        return colaReproduccion;
+    }
 
 
     const std::vector<CD>& getListaCds() const;
 private:
     std::vector<CD> listaCds;
+    std::queue<Cancion> colaReproduccion;
 };
 
 #endif

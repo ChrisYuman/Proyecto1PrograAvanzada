@@ -2,7 +2,7 @@
 #include <iostream>
 
 Agregarcancion::Agregarcancion() {
-    // Constructor (si es necesario)
+    
 }
 
 void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {

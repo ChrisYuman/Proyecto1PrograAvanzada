@@ -4,6 +4,7 @@
 #include <iostream>
 #include "ReproductorCD.h"
 #include "Agregarcancion.h"
+#include "VerCola.h"
 using namespace std; 
 
 int main()
@@ -13,6 +14,7 @@ int main()
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
     ReproductorCD reproductor;
     Agregarcancion agregar; 
+    VerCola verCola(reproductor);
 
     
     menu1:
@@ -67,15 +69,20 @@ int main()
                         cin >> opcion2;
                         switch (opcion2){
                             case 1: 
+                                ag:
                                 cout << "Agregar cancion\n" << endl;
                                 Agregarcancion::ejecutarAgregarcancion(&reproductor);
                                
                                 cout << "su canción se ha agregado" << endl; 
-                                
+                                cout << "Desea agregar otra cancion? s=Si, n= No" << endl;
+                                char elegir1;
+                                cin >> elegir1;
+                                if (elegir1 == 's') { system("cls");  goto ag; }
+                                else { goto menu2; }
                                 break; 
                             case 2:
                                 cout << "Ver cola de reproduccion\n" << endl;
-
+                                verCola.mostrarCola();
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 3:

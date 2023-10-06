@@ -132,12 +132,14 @@
     <ClCompile Include="CD.cpp" />
     <ClCompile Include="Proyecto1PrograAvanzada.cpp" />
     <ClCompile Include="ReproductorCD.cpp" />
+    <ClCompile Include="VerCola.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agregarcancion.h" />
     <ClInclude Include="Cancion.h" />
     <ClInclude Include="CD.h" />
     <ClInclude Include="ReproductorCD.h" />
+    <ClInclude Include="VerCola.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
