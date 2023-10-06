@@ -16,7 +16,7 @@ int main()
     ReproductorCD reproductor;
     Agregarcancion agregar; 
     VerCola vercola;
-    ReproducirActual reproducir; 
+    ReproduciActual reproducir; 
 
     menu1:
     cout << "Menu principal" << endl; 
@@ -88,7 +88,7 @@ int main()
                                 break;
                             case 3:
                                 cout << "Reproducir actual\n" << endl;
-                                reproducir.mostrarInformacion();
+                                reproducir.mostrarPrimeraCancionEnCola(&reproductor);
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 4:

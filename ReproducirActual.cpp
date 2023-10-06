@@ -2,32 +2,20 @@
 #include <iostream>
 
 
-ReproducirActual::ReproducirActual() {
-    // Inicializamos la canción en reproducción en blanco (sin canción)
-    cancionEnReproduccion = Cancion("", "", "");
+ReproduciActual::ReproduciActual() {
+    // Constructor si es necesario
 }
 
-void ReproducirActual::establecerCancionEnReproduccion(const Cancion& cancion) {
-    cancionEnReproduccion = cancion;
-}
+void ReproduciActual::mostrarPrimeraCancionEnCola(const ReproductorCD* reproductor) const {
+    const std::vector<Cancion>& colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-const Cancion& ReproducirActual::obtenerCancionEnReproduccion() const {
-    return cancionEnReproduccion;
-}
-
-bool ReproducirActual::hayCancionEnReproduccion() const {
-    return !cancionEnReproduccion.getNombre().empty();
-}
-
-void ReproducirActual::mostrarInformacion() const {
-    if (hayCancionEnReproduccion()) {
-        std::cout << "Reproduciendo:" << std::endl;
-        std::cout << "Nombre: " << cancionEnReproduccion.getNombre() << std::endl;
-        std::cout << "Artista: " << cancionEnReproduccion.getArtista() << std::endl;
-        std::cout << "Duración: " << cancionEnReproduccion.getDuracion() << std::endl;
-        // Puedes agregar el nombre del CD aquí si está disponible en tu modelo de datos.
+    if (colaDeReproduccion.empty()) {
+        std::cout << "La cola de reproducción está vacía." << std::endl;
     }
     else {
-        std::cout << "Reproducción en Pausa" << std::endl;
+        std::cout << "Primera canción en la cola de reproducción:" << std::endl;
+        std::cout << "Nombre: " << colaDeReproduccion[0].getNombre() << std::endl;
+        std::cout << "Artista: " << colaDeReproduccion[0].getArtista() << std::endl;
+        std::cout << "Duración: " << colaDeReproduccion[0].getDuracion() << std::endl;
     }
 }
