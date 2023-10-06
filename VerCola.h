@@ -5,13 +5,12 @@
 #include <queue>
 class VerCola
 {
-    public:
-        VerCola(ReproductorCD& reproductor); 
+        public:
+            VerCola(ReproductorCD* reproductor);
+            void mostrarColaYUltimaCancionAgregada(const Cancion& ultimaCancionAgregada);
 
-        void mostrarCola(); // Declaración de la función para mostrar la cola de reproducción
-
-    private:
-        ReproductorCD& reproductor; // Miembro para mantener una referencia al reproductor
+        private:
+            ReproductorCD* reproductor;
     
 };
 
