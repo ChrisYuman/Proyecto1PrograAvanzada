@@ -132,6 +132,7 @@
     <ClCompile Include="CD.cpp" />
     <ClCompile Include="Proyecto1PrograAvanzada.cpp" />
     <ClCompile Include="ReproducirActual.cpp" />
+    <ClCompile Include="ReproducirSiguiente.cpp" />
     <ClCompile Include="ReproductorCD.cpp" />
     <ClCompile Include="VerCola.cpp" />
   </ItemGroup>
@@ -140,6 +141,7 @@
     <ClInclude Include="Cancion.h" />
     <ClInclude Include="CD.h" />
     <ClInclude Include="ReproducirActual.h" />
+    <ClInclude Include="ReproducirSiguiente.h" />
     <ClInclude Include="ReproductorCD.h" />
     <ClInclude Include="VerCola.h" />
   </ItemGroup>

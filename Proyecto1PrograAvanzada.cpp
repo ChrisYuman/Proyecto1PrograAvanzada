@@ -6,6 +6,7 @@
 #include "Agregarcancion.h"
 #include "VerCola.h"
 #include "ReproducirActual.h"
+#include "ReproducirSiguiente.h"
 using namespace std; 
 
 int main()
@@ -17,6 +18,7 @@ int main()
     Agregarcancion agregar; 
     VerCola vercola;
     ReproduciActual reproducir; 
+    ReproducirSiguiente siguiente; 
 
     menu1:
     cout << "Menu principal" << endl; 
@@ -104,6 +106,7 @@ int main()
                                 break;
                             case 4:
                                 cout << "Reproducir siguiente\n" << endl;
+                                siguiente.reproducirSiguiente(&reproductor);
 
                                 //goto menu2; //todavia no se usa
                                 break;

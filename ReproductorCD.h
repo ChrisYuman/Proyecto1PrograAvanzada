@@ -41,6 +41,9 @@ public:
     }
 
     const std::vector<CD>& getListaCds() const;
+    void setColaDeReproduccion(const std::vector<Cancion>& nuevaCola) {
+        colaDeReproduccion = nuevaCola;
+    }
 private:
     std::vector<CD> listaCds;
     std::queue<Cancion> colaReproduccion;
