@@ -10,12 +10,12 @@ void ReproduciActual::mostrarPrimeraCancionEnCola(const ReproductorCD* reproduct
     const std::vector<Cancion>& colaDeReproduccion = reproductor->getColaDeReproduccion();
 
     if (colaDeReproduccion.empty()) {
-        std::cout << "La cola de reproducción está vacía." << std::endl;
+        std::cout << "La cola de reproducción esta vacia." << std::endl;
     }
     else {
-        std::cout << "Primera canción en la cola de reproducción:" << std::endl;
+        std::cout << "Primera canción en la cola de reproduccion:" << std::endl;
         std::cout << "Nombre: " << colaDeReproduccion[0].getNombre() << std::endl;
         std::cout << "Artista: " << colaDeReproduccion[0].getArtista() << std::endl;
-        std::cout << "Duración: " << colaDeReproduccion[0].getDuracion() << std::endl;
+        std::cout << "Duracion: " << colaDeReproduccion[0].getDuracion() << std::endl;
     }
 }
