@@ -5,11 +5,9 @@
 #include "VerCola.h"
 
 
-VerCola::VerCola() {
-    // Inicialización del constructor si es necesario
-}
+VerCola::VerCola() {}
 
-// Método para mostrar la cola de reproducción
+
 void VerCola::mostrarColaDeReproduccion(const ReproductorCD* reproductor) const {
     const std::vector<Cancion>& colaDeReproduccion = reproductor->getColaDeReproduccion();
 

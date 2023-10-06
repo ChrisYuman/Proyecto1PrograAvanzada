@@ -21,7 +21,7 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
     LPCWSTR patronBusqueda = L"/*.txt";
 
     // Combina la carpeta y el patrón de búsqueda en una cadena LPCWSTR
-    std::wstring carpetaConPatron = carpetaW + L"\\*.txt";  // Asegúrate de agregar el patrón "*.txt" directamente
+    std::wstring carpetaConPatron = carpetaW + L"\\*.txt";  
     LPCWSTR carpetaConPatronLPCWSTR = carpetaConPatron.c_str();
 
     // Utiliza la biblioteca <windows.h> para listar archivos en el directorio
@@ -40,7 +40,7 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
     do {
         std::wstring nombreArchivoW = findFileData.cFileName;
         std::string nombreArchivo(nombreArchivoW.begin(), nombreArchivoW.end());
-        std::string rutaCompleta = carpeta + "\\" + nombreArchivo;  // Usar '\\' para la ruta
+        std::string rutaCompleta = carpeta + "\\" + nombreArchivo;  
         cargarCdDesdeArchivo(rutaCompleta);
     } while (FindNextFile(hFind, &findFileData) != 0);
 
@@ -55,9 +55,9 @@ void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
         return;
     }
 
-    std::string nombreCd = nombreArchivo; // Nombre del CD extraído del nombre del archivo
+    std::string nombreCd = nombreArchivo; 
 
-    CD cd(nombreCd); // Crea un nuevo CD
+    CD cd(nombreCd); 
 
     std::string linea;
     while (std::getline(archivo, linea)) {
@@ -72,7 +72,7 @@ void ReproductorCD::cargarCdDesdeArchivo(const std::string& nombreArchivo) {
             tokens.push_back(token);
             linea.erase(0, pos + delimiter.length());
         }
-        tokens.push_back(linea);  // Añade la última parte
+        tokens.push_back(linea);  
 
         if (tokens.size() == 3) {
             Cancion cancion(tokens[0], tokens[1], tokens[2]);

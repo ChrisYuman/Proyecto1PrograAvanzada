@@ -37,25 +37,24 @@ void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
 
         // Solicitar al usuario que elija una canción
         int opcionCancion;
-        std::cout << "Seleccione una canción por número: ";
+        std::cout << "Seleccione una cancion por numero: ";
         std::cin >> opcionCancion;
 
         // Verificar si la opción de canción es válida
         if (opcionCancion >= 1 && opcionCancion <= listaCanciones.size()) {
-            // Obtener la canción seleccionada por el usuario
+            
             const Cancion& cancionSeleccionada = listaCanciones[opcionCancion - 1];
 
-            // Agregar la canción seleccionada a la cola de reproducción (ajusta esto según tu implementación)
             reproductor->agregarCancionALaCola(cancionSeleccionada);
 
-            std::cout << "Canción agregada a la cola de reproducción: " << cancionSeleccionada.getNombre() << std::endl;
+            std::cout << "Cancion agregada a la cola de reproduccion: " << cancionSeleccionada.getNombre() << std::endl;
         }
         else {
-            std::cout << "Opción de canción no válida." << std::endl;
+            std::cout << "Opcion de cancion no valida." << std::endl;
         }
     }
     else {
-        std::cout << "Opción de CD no válida." << std::endl;
+        std::cout << "Opcion de CD no valido." << std::endl;
     }
 }
 
