@@ -38,15 +38,15 @@ int main()
             system("cls"); //limpiar la pantalla 
             cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
             
-            //// Solicitar al usuario la ruta de la carpeta de respaldos
+            // Solicitar al usuario la ruta de la carpeta de respaldos
             
             cout << "Ingrese la ruta de la carpeta de respaldos: ";
             cin >> carpeta;
 
-            //// Cargar los respaldos desde la carpeta
+            // Cargar los respaldos desde la carpeta
             reproductorcr->cargarRespaldosDesdeCarpeta(carpeta);
 
-            ////Imprimir los discos cargados
+            //Imprimir los discos cargados
             reproductorcr->imprimirDiscos();
 
             cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
@@ -83,32 +83,39 @@ int main()
                                 else { goto menu2; }
                                 break; 
                             case 2:
-                                verc:
+                            verc:
+                                system("cls");
                                 cout << "Ver cola de reproduccion\n" << endl;
                                 vercola.mostrarColaDeReproduccion(&reproductor);
 
                                 cout << "Por favor, regrese al menu con la letra 's'" << endl;
                                 char elegir2;
                                 cin >> elegir2;
-                                if (elegir2 == 's') { system("cls"); goto menu2; }
-                                else { system("cls"); goto verc; }
+                                if (elegir2 == 's') {  goto menu2; }
+                                else { goto verc; }
                                 break;
                             case 3:
-                                repa:
+                            repa:
+                                system("cls");
                                 cout << "Reproducir actual\n" << endl;
                                 reproducir.mostrarPrimeraCancionEnCola(&reproductor);
                                 
                                 cout << "Por favor, regrese al menu con la letra 's'" << endl;
                                 char elegir3;
                                 cin >> elegir3;
-                                if (elegir3 == 's') { system("cls"); goto menu2; }
-                                else { system("cls"); goto repa; }
+                                if (elegir3 == 's') {  goto menu2; }
+                                else { goto repa; }
                                 break;
                             case 4:
+                                reps:
                                 cout << "Reproducir siguiente\n" << endl;
                                 siguiente.reproducirSiguiente(&reproductor);
 
-                                //goto menu2; //todavia no se usa
+                                cout << "Por favor, regrese al menu con la letra 's'" << endl;
+                                char elegir4;
+                                cin >> elegir4;
+                                if (elegir4 == 's') { goto menu2; }
+                                else { goto reps; }
                                 break;
                             case 5:
                                 cout << "Ordenar\n" << endl;
