@@ -5,6 +5,7 @@
 #include "ReproductorCD.h"
 #include "Agregarcancion.h"
 #include "VerCola.h"
+#include "ReproducirActual.h"
 using namespace std; 
 
 int main()
@@ -15,6 +16,7 @@ int main()
     ReproductorCD reproductor;
     Agregarcancion agregar; 
     VerCola vercola;
+    ReproducirActual reproducir; 
 
     menu1:
     cout << "Menu principal" << endl; 
@@ -86,7 +88,7 @@ int main()
                                 break;
                             case 3:
                                 cout << "Reproducir actual\n" << endl;
-
+                                reproducir.mostrarInformacion();
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 4:
