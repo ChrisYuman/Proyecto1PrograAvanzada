@@ -33,7 +33,6 @@ int main()
     switch (opcion) 
     {
         case 1: 
-            masdisc:
             system("cls"); //limpiar la pantalla 
             cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
             
@@ -82,9 +81,15 @@ int main()
                                 else { goto menu2; }
                                 break; 
                             case 2:
+                                verc:
                                 cout << "Ver cola de reproduccion\n" << endl;
                                 vercola.mostrarColaDeReproduccion(&reproductor);
-                                //goto menu2; //todavia no se usa
+
+                                cout << "Por favor, regrese al menu con la letra 's'" << endl;
+                                char elegir2;
+                                cin >> elegir2;
+                                if (elegir2 == 's') {goto menu2; }
+                                else { system("cls"); goto verc; }
                                 break;
                             case 3:
                                 cout << "Reproducir actual\n" << endl;
