@@ -22,8 +22,7 @@ public:
             return listaCds[indice];
         }
         else {
-            // Manejar el caso de índice no válido
-            throw std::out_of_range("Índice de CD no válido");
+            throw std::out_of_range("indice de CD no valido");
         }
     }
     const std::queue<Cancion>& getColaReproduccion() const {

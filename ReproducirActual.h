@@ -3,7 +3,7 @@
 
 class ReproduciActual {
 public:
-    ReproduciActual(); // Constructor
+    ReproduciActual(); 
     void mostrarPrimeraCancionEnCola(const ReproductorCD* reproductor) const;
 };
 

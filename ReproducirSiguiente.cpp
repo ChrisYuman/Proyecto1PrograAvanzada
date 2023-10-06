@@ -8,8 +8,7 @@ ReproducirSiguiente::ReproducirSiguiente() {
 void ReproducirSiguiente::reproducirSiguiente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion(); // Copia la cola
 
-    if (colaDeReproduccion.size() >= 2) { // Asegurarse de que haya al menos dos canciones en la cola
-        // Obtener la canción siguiente (segunda en la cola)
+    if (colaDeReproduccion.size() >= 2) { 
         Cancion cancionSiguiente = colaDeReproduccion[1];
 
         // Eliminar la primera canción de la cola

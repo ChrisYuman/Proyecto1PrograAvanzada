@@ -168,7 +168,6 @@ int main()
                                     break;
                                 }
 
-                                //goto menu2; //todavia no se usa
                                 break;
                             case 6:
                                 system("cls");

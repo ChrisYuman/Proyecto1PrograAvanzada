@@ -26,7 +26,7 @@ public:
         }
         else {
             // Manejar el caso de índice no válido
-            throw std::out_of_range("Índice de canción no válido");
+            throw std::out_of_range("indice de canción no valido");
         }
     }
 private:

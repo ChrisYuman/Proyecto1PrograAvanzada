@@ -11,7 +11,7 @@ public:
     std::string getArtista() const;
     std::string getDuracion() const;
 
-    Cancion() : nombre(""), artista(""), duracion("") {}  // Constructor predeterminado
+    Cancion() : nombre(""), artista(""), duracion("") {}  
 
 private:
     std::string nombre;
@@ -19,4 +19,4 @@ private:
     std::string duracion;
 };
 
-#endif  // CANCION_H
+#endif  // CANCION_h

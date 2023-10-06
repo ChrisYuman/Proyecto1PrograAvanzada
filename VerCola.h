@@ -6,9 +6,8 @@
 
 class VerCola {
 public:
-    VerCola(); // Constructor de la clase
+    VerCola(); 
 
-    // Método para mostrar la cola de reproducción
     void mostrarColaDeReproduccion(const ReproductorCD* reproductor) const;
 
 };

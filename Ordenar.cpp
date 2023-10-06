@@ -2,9 +2,7 @@
 #include <algorithm>
 
 
-Ordenar::Ordenar() {
-    // Constructor si es necesario
-}
+Ordenar::Ordenar() {}
 
 void Ordenar::ordenarPorNombreArtistaAscendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
