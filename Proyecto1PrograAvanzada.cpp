@@ -68,7 +68,8 @@ int main()
                         switch (opcion2){
                             case 1: 
                                 cout << "Agregar cancion\n" << endl;
-                                agregar1->ejecutar();
+                                Agregarcancion::ejecutarAgregarcancion(&reproductor);
+                               
                                 cout << "su canción se ha agregado" << endl; 
                                 
                                 break; 

@@ -1,59 +1,61 @@
 #include "Agregarcancion.h"
 #include <iostream>
 
+Agregarcancion::Agregarcancion() {
+    // Constructor (si es necesario)
+}
 
-Agregarcancion::Agregarcancion(ReproductorCD& reproductor) : reproductor(reproductor) {}
+void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
+    std::cout << "Agregar Canción\n" << std::endl;
 
-void Agregarcancion::ejecutar() {
-    // Obtener la cantidad de CDs en el reproductor
-    int cantidadCds = reproductor.getCantidadCds();
+    // Llamar al método de ReproductorCD para obtener la lista de CDs
+    const std::vector<CD>& listaCds = reproductor->getListaCds();
 
-    if (cantidadCds == 0) {
-        std::cout << "No hay CDs disponibles para agregar canciones." << std::endl;
-        return;
-    }
-
-    // Mostrar la lista de CDs disponibles
-    std::cout << "Lista de CDs disponibles:" << std::endl;
-    for (int i = 0; i < cantidadCds; ++i) {
-        const CD& cd = reproductor.getCdPorIndice(i);
-        std::cout << i + 1 << ". " << cd.getNombre() << std::endl;
+    // Mostrar la lista de CDs al usuario
+    std::cout << "Lista de CDs:" << std::endl;
+    for (int i = 0; i < listaCds.size(); i++) {
+        std::cout << i + 1 << ". " << listaCds[i].getNombre() << std::endl;
     }
 
     // Solicitar al usuario que elija un CD
-    int cdElegido;
-    std::cout << "Elija un CD para agregar canciones (1-" << cantidadCds << "): ";
-    std::cin >> cdElegido;
+    int opcionCd;
+    std::cout << "Seleccione un CD por número: ";
+    std::cin >> opcionCd;
 
-    if (cdElegido < 1 || cdElegido > cantidadCds) {
-        std::cout << "Selección de CD no válida." << std::endl;
-        return;
+    // Verificar si la opción es válida
+    if (opcionCd >= 1 && opcionCd <= listaCds.size()) {
+        // Obtener el CD seleccionado por el usuario
+        const CD& cdSeleccionado = listaCds[opcionCd - 1];
+
+        // Obtener la lista de canciones del CD seleccionado
+        const std::vector<Cancion>& listaCanciones = cdSeleccionado.getCanciones();
+
+        // Mostrar la lista de canciones del CD
+        std::cout << "Lista de Canciones en " << cdSeleccionado.getNombre() << ":" << std::endl;
+        for (int i = 0; i < listaCanciones.size(); i++) {
+            std::cout << i + 1 << ". " << listaCanciones[i].getNombre() << std::endl;
+        }
+
+        // Solicitar al usuario que elija una canción
+        int opcionCancion;
+        std::cout << "Seleccione una canción por número: ";
+        std::cin >> opcionCancion;
+
+        // Verificar si la opción de canción es válida
+        if (opcionCancion >= 1 && opcionCancion <= listaCanciones.size()) {
+            // Obtener la canción seleccionada por el usuario
+            const Cancion& cancionSeleccionada = listaCanciones[opcionCancion - 1];
+
+            // Agregar la canción seleccionada a la cola de reproducción (ajusta esto según tu implementación)
+            // Ejemplo: reproductor->agregarCancionALaCola(cancionSeleccionada);
+
+            std::cout << "Canción agregada a la cola de reproducción: " << cancionSeleccionada.getNombre() << std::endl;
+        }
+        else {
+            std::cout << "Opción de canción no válida." << std::endl;
+        }
     }
-
-    const CD& cdSeleccionado = reproductor.getCdPorIndice(cdElegido - 1);
-
-    // Mostrar las canciones del CD seleccionado
-    std::cout << "Canciones del CD \"" << cdSeleccionado.getNombre() << "\":" << std::endl;
-    int cantidadCanciones = cdSeleccionado.getCantidadCanciones();
-    for (int i = 0; i < cantidadCanciones; ++i) {
-        const Cancion& cancion = cdSeleccionado.getCancionPorIndice(i);
-        std::cout << i + 1 << ". " << cancion.getNombre() << " - " << cancion.getArtista() << " (" << cancion.getDuracion() << ")" << std::endl;
+    else {
+        std::cout << "Opción de CD no válida." << std::endl;
     }
-
-    // Solicitar al usuario que elija una canción
-    int cancionElegida;
-    std::cout << "Elija una canción para agregar a la cola de reproducción (1-" << cantidadCanciones << "): ";
-    std::cin >> cancionElegida;
-
-    if (cancionElegida < 1 || cancionElegida > cantidadCanciones) {
-        std::cout << "Selección de canción no válida." << std::endl;
-        return;
-    }
-
-    const Cancion& cancionSeleccionada = cdSeleccionado.getCancionPorIndice(cancionElegida - 1);
-
-    // Agregar la canción seleccionada a la cola de reproducción (debes implementar esta función en ReproductorCD)
-    // reproductor.agregarCancionAReproduccion(cancionSeleccionada);
-
-    std::cout << "Canción agregada a la cola de reproducción: " << cancionSeleccionada.getNombre() << std::endl;
 }

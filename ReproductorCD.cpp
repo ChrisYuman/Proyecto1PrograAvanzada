@@ -6,7 +6,9 @@
 #include <windows.h>
 
 ReproductorCD::ReproductorCD() {}
-
+const std::vector<CD>& ReproductorCD::getListaCds() const {
+    return listaCds;
+}
 void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
     // Limpia la lista de CDs existente si se selecciona esta opción nuevamente
     listaCds.clear();

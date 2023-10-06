@@ -24,6 +24,9 @@ public:
             throw std::out_of_range("Índice de CD no válido");
         }
     }
+
+
+    const std::vector<CD>& getListaCds() const;
 private:
     std::vector<CD> listaCds;
 };

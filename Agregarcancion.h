@@ -3,12 +3,8 @@
 #include "ReproductorCD.h"
 
 class Agregarcancion {
-private:
-    ReproductorCD& reproductor;
-
 public:
-    Agregarcancion();
-    Agregarcancion(ReproductorCD& reproductor);
+    Agregarcancion(); // Constructor
 
-    void ejecutar();
+    static void ejecutarAgregarcancion(ReproductorCD* reproductor); // Función para ejecutar la opción "Agregar Canción"
 };
