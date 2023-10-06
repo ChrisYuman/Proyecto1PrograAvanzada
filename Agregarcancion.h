@@ -7,6 +7,7 @@ private:
     ReproductorCD& reproductor;
 
 public:
+    Agregarcancion();
     Agregarcancion(ReproductorCD& reproductor);
 
     void ejecutar();

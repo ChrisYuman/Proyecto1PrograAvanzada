@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "ReproductorCD.h"
+#include "Agregarcancion.h"
 using namespace std; 
 
 int main()
@@ -11,6 +12,7 @@ int main()
     cout << "Proyecto 1 programacion avanzada\n" << endl; 
     cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl; 
     ReproductorCD reproductor;
+    Agregarcancion agregar; 
 
     
     menu1:
@@ -22,6 +24,7 @@ int main()
     int opcion;
     cin >> opcion; 
     ReproductorCD* reproductorcr = &reproductor;
+    Agregarcancion* agregar1 = &agregar;
     string carpeta;
 
     switch (opcion) 
@@ -65,8 +68,9 @@ int main()
                         switch (opcion2){
                             case 1: 
                                 cout << "Agregar cancion\n" << endl;
-
-                                //goto menu2; //todavia no se usa
+                                agregar1->ejecutar();
+                                cout << "su canción se ha agregado" << endl; 
+                                
                                 break; 
                             case 2:
                                 cout << "Ver cola de reproduccion\n" << endl;

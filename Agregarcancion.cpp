@@ -1,6 +1,7 @@
 #include "Agregarcancion.h"
 #include <iostream>
 
+
 Agregarcancion::Agregarcancion(ReproductorCD& reproductor) : reproductor(reproductor) {}
 
 void Agregarcancion::ejecutar() {
