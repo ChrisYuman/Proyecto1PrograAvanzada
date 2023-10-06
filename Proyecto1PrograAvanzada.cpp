@@ -88,13 +88,19 @@ int main()
                                 cout << "Por favor, regrese al menu con la letra 's'" << endl;
                                 char elegir2;
                                 cin >> elegir2;
-                                if (elegir2 == 's') {goto menu2; }
+                                if (elegir2 == 's') { system("cls"); goto menu2; }
                                 else { system("cls"); goto verc; }
                                 break;
                             case 3:
+                                repa:
                                 cout << "Reproducir actual\n" << endl;
                                 reproducir.mostrarPrimeraCancionEnCola(&reproductor);
-                                //goto menu2; //todavia no se usa
+                                
+                                cout << "Por favor, regrese al menu con la letra 's'" << endl;
+                                char elegir3;
+                                cin >> elegir3;
+                                if (elegir3 == 's') { system("cls"); goto menu2; }
+                                else { system("cls"); goto repa; }
                                 break;
                             case 4:
                                 cout << "Reproducir siguiente\n" << endl;
