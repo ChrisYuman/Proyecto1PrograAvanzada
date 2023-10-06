@@ -165,7 +165,7 @@ int main()
                         goto menu2;
                         break;
                     default:
-                        goto menu2;
+                        cout << "Error en el programa, ingerese datos validos como se solicita";
                         break;
                     }
 
@@ -176,7 +176,7 @@ int main()
                     break;
 
                 default:
-                    goto menu2;
+                    cout << "Error en el programa, ingerese datos validos como se solicita";
                     break;
                 }
                 break;
@@ -185,7 +185,6 @@ int main()
                 break;
             default:
                 exit(-1);
-                goto menu1;
                 break;
             }
 
