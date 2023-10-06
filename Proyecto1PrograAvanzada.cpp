@@ -7,6 +7,7 @@
 #include "VerCola.h"
 #include "ReproducirActual.h"
 #include "ReproducirSiguiente.h"
+#include "Ordenar.h"
 using namespace std; 
 
 int main()
@@ -19,6 +20,7 @@ int main()
     VerCola vercola;
     ReproduciActual reproducir; 
     ReproducirSiguiente siguiente; 
+    Ordenar ordenar; 
 
     menu1:
     cout << "Menu principal" << endl; 
@@ -107,7 +109,8 @@ int main()
                                 else { goto repa; }
                                 break;
                             case 4:
-                                reps:
+                            reps:
+                                system("cls");
                                 cout << "Reproducir siguiente\n" << endl;
                                 siguiente.reproducirSiguiente(&reproductor);
 
@@ -118,16 +121,58 @@ int main()
                                 else { goto reps; }
                                 break;
                             case 5:
+                                system("cls");
                                 cout << "Ordenar\n" << endl;
+                                cout << "Como desea ordenar la cola?" << endl; 
+                                cout << "1.Nombre del artista ascendente" << endl;
+                                cout << "2.Nombre del artista descendente" << endl;
+                                cout << "3.Nombre de cancion ascendente" << endl;
+                                cout << "4.Nombre de cancion descendente" << endl;
+                                cout << "5.Duracion de cancion ascendente" << endl;
+                                cout << "6.Duracion de cancion descendente" << endl;
+                                cout << "7.Regresar al menu" << endl;
+                                int op; 
+                                cin >> op; 
+                                switch (op)
+                                {
+                                case 1: 
+                                    ordenar.ordenarPorNombreArtistaAscendente(&reproductor);
+                                    goto menu2;
+                                    break; 
+                                case 2:
+                                    ordenar.ordenarPorNombreArtistaDescendente(&reproductor);
+                                    goto menu2;
+                                        break; 
+                                case 3: 
+                                    ordenar.ordenarPorNombreCancionAscendente(&reproductor);
+                                    goto menu2;
+                                    break; 
+                                case 4: 
+                                    ordenar.ordenarPorNombreCancionDescendente(&reproductor);
+                                    goto menu2;
+                                    break; 
+                                case 5: 
+                                    ordenar.ordenarPorDuracionAscendente(&reproductor);
+                                    goto menu2;
+                                    break; 
+                                case 6: 
+                                    ordenar.ordenarPorDuracionDescendente(&reproductor);
+                                    goto menu2;
+                                    break; 
+                                case 7: 
+
+                                    goto menu2;
+                                    break; 
+                                default:
+                                    goto menu2;
+                                    break;
+                                }
 
                                 //goto menu2; //todavia no se usa
                                 break;
                             case 6:
-                                cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
-                                char elegir; 
-                                cin >> elegir; 
-                                if (elegir == 's') {system("cls");  goto menu1; }
-                                else { goto menu2; }
+                                system("cls");
+                                goto menu1;
                                 break;
 
                         default:
