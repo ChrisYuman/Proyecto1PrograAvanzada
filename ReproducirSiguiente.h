@@ -1,5 +1,5 @@
 #pragma once
-#include "ReproductorCD.h"
+#include "ReproductorCD.h" //Incluimos el .h
 
 
 class ReproducirSiguiente

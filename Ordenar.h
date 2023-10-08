@@ -1,6 +1,6 @@
 #pragma once
-#include "ReproductorCD.h"
-#include <vector>
+#include "ReproductorCD.h" //Incluimos el .h
+#include <vector> //Añadimos la libreria para los vectores
 
 class Ordenar {
 public:

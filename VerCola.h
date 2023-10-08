@@ -1,8 +1,8 @@
 #pragma once
-#include "ReproductorCD.h"
-#include "Cancion.h"
+#include "ReproductorCD.h" //Incluimos el .h
+#include "Cancion.h" //Incluimos el .h
 #include <iostream>
-#include <queue>
+#include <queue> //Esta libreria sirve para la estructura de datos de cola
 
 class VerCola {
 public:

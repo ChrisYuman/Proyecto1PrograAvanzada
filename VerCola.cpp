@@ -1,8 +1,8 @@
-#include "ReproductorCD.h"
-#include "Cancion.h"
+#include "ReproductorCD.h" //Incluimos el .h
+#include "Cancion.h" //Incluimos el .h
 #include <iostream>
-#include <queue>
-#include "VerCola.h"
+#include <queue> //Esta libreria sirve para la estructura de datos de cola
+#include "VerCola.h" //Incluimos el .h
 
 
 VerCola::VerCola() {}

@@ -1,4 +1,4 @@
-#include "Cancion.h"
+#include "Cancion.h" // Aca incluimos el .h 
 
 Cancion::Cancion(const std::string& nombre, const std::string& artista, const std::string& duracion)
     : nombre(nombre), artista(artista), duracion(duracion) {}

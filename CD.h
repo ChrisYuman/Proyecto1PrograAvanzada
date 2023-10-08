@@ -1,10 +1,10 @@
-#ifndef CD_H
-#define CD_H
+#ifndef CD_H //Esto nos sirve para verificar que CD.h no este definido anteriormente en el codigo y asi
+#define CD_H // Esto nos sirve para definir el CD.h
 
-#include <string>
-#include <vector>
-#include "Cancion.h"
-#include <stdexcept>
+#include <string> //Añadimos la libreria string
+#include <vector> //Añadimos la libreria de vectores
+#include "Cancion.h" // Incluimos el .h
+#include <stdexcept> //Esta libreria nos sirvio para validar el indice ya que necesitamos usar la sentencia de out of range 
 
 
 class CD {
@@ -25,7 +25,7 @@ public:
             return canciones[indice];
         }
         else {
-            // Manejar el caso de índice no válido
+            // Esto es por si en un caso es indice no valido -.-
             throw std::out_of_range("indice de canción no valido");
         }
     }
@@ -34,4 +34,4 @@ private:
     std::vector<Cancion> canciones;
 };
 
-#endif  // CD_H
+#endif  // Esto sirve para marcar el final de la seccion o bien de este codigp

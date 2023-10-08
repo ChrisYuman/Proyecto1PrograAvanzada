@@ -1,5 +1,5 @@
 // Proyecto1PrograAvanzada.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+//Hecho por Pablo Andres Bocel Morales :D y Christopher Javier Yuman Valdez -.-
 
 #include <iostream>
 #include "ReproductorCD.h"
@@ -8,6 +8,7 @@
 #include "ReproducirActual.h"
 #include "ReproducirSiguiente.h"
 #include "Ordenar.h"
+
 using namespace std; 
 
 int main()
@@ -16,6 +17,65 @@ int main()
 
             cout << "Proyecto 1 programacion avanzada\n" << endl;
             cout << "--------------------Bienvenido, en esta aplicacion podra almacenar sus CDs para poder reprdocucirlos--------------------" << endl;
+            std::cout <<
+                "                                                                                                    " << std::endl <<
+                "                                                                                      ::            " << std::endl <<
+                "                                                                                  ..:..-:::         " << std::endl <<
+                "                                                                               ...:.:-:::::.        " << std::endl <<
+                "                                                                             ...:.-:::::::.         " << std::endl <<
+                "                                                                          .: :.:-:::::....          " << std::endl <<
+                "                                                                          .:.-:::.:-:.              " << std::endl <<
+                "                                                                         .:-::::-=:..               " << std::endl <<
+                "                                                                         :::.::.-=-.                " << std::endl <<
+                "                                                                       .=++*:....:                  " << std::endl <<
+                "                                                                      :***++-.                      " << std::endl <<
+                "                                                                    .=*****:                        " << std::endl <<
+                "                                                                   :*****+.                         " << std::endl <<
+                "                                                                 .+*****-                           " << std::endl <<
+                "                                                                -**+**+.                            " << std::endl <<
+                "                                                              .+*****-                              " << std::endl <<
+                "                                                             -*****+.                               " << std::endl <<
+                "                                                           :+**+**=                                " << std::endl <<
+                "                                                         .=*****+:                                 " << std::endl <<
+                "                                                        :******=                                   " << std::endl <<
+                "                                                      .=*****+:                                    " << std::endl <<
+                "                                    .:--::.          :+*****=.                                     " << std::endl <<
+                "                                  .-=+++=:.        .=**+***:                                       " << std::endl <<
+                "                                 -=++++=:         -******=.                                        " << std::endl <<
+                "                                -+++++=.        .+*****+:                                          " << std::endl <<
+                "                               -+++++=:        -*+****=.                                           " << std::endl <<
+                "                              -=+++++=:      :+****++-                                             " << std::endl <<
+                "                             :=+++++++=     =******+.                                              " << std::endl <<
+                "                            .=+++++++++=::-+**+***-                                               " << std::endl <<
+                "                           .-+++++++=:-+++******+.                                                " << std::endl <<
+                "                          .-+++++++=...+*******=                                                   " << std::endl <<
+                "                        .-=+++++++=..:+***+**+:                                                    " << std::endl <<
+                "                     .:-=++++++++-:..:******=                                                      " << std::endl <<
+                "                 .:-==+++++++++-......:+***:                                                       " << std::endl <<
+                "              .:-=+++++++++=-:.......:..:-=-        ..                                               " << std::endl <<
+                "            :-=+++++++++=-:...........:....==.   .-===.                                              " << std::endl <<
+                "          :=+++++++++++-.......:........:...-=+===-:.-.                                              " << std::endl <<
+                "         -++++++++++++:.........::..................-:                                               " << std::endl <<
+                "        =++++++++++++-....:.......:...............--.                                                " << std::endl <<
+                "       :+++++++++++++-:....:...................:--:                                                 " << std::endl <<
+                "       -++++++++++++++---:..::..............-=-:.                                                    " << std::endl <<
+                "       -*++++++++++++=--=--..::...........--:                                                        " << std::endl <<
+                "       .**++++++++++++---==--..:.........-:                                                          " << std::endl <<
+                "        =**++++++++++**+==-=--..........--                                                           " << std::endl <<
+                "        .+*++++++++++++*+=--==.........:=.                                                           " << std::endl <<
+                "         .+*++++++++++++++++++=......:.=:                                                            " << std::endl <<
+                "          .+*++++++++++++++++++=......:=.                                                            " << std::endl <<
+                "            -*+++++++++++++-:-++......=:                                                             " << std::endl <<
+                "             .+++++++++++++:--=+-....--                                                              " << std::endl <<
+                "              -=+++++++++++==--+-...:=.                                                              " << std::endl <<
+                "                .=*++++++++=::-++::-=.                                                               " << std::endl <<
+                "                  .=*+++++++=:=++++=.                                                                " << std::endl <<
+                "                    .=*++++++=++++-                                                                 " << std::endl <<
+                "                       :=++++++=:.                                                                  " << std::endl <<
+                "                            .                                                                        " << std::endl <<
+                "                                                                                                    " << std::endl;
+
+                                                                                                                                                                                         
             ReproductorCD reproductor;
             Agregarcancion agregar;
             VerCola vercola;
@@ -24,6 +84,7 @@ int main()
             Ordenar ordenar;
 
         menu1:
+
             cout << "Menu principal" << endl;
             cout << "Escoga una de las opciones que se presentan a continuacion" << endl;
             cout << "1. Cargar respaldos" << endl;
@@ -38,18 +99,20 @@ int main()
             switch (opcion)
             {
             case 1:
-                system("cls"); //limpiar la pantalla 
+                system("cls"); //limpiamos la pantalla 
                 cout << "--------------------Aqui podra seleccionar los CDs que desee para poder almacenarlos en el programa---------------------\n" << endl;
 
-                // Solicitar al usuario la ruta de la carpeta de respaldos
+                // Solicitamos al usuario la ruta de la carpeta de respaldos
 
-                cout << "Ingrese la ruta de la carpeta de respaldos: ";
+                cout << "Ingrese la ruta de la carpeta de respaldos (El nombre de la carpeta no debe contener espacios) : ";
                 cin >> carpeta;
 
-                // Cargar los respaldos desde la carpeta
+                // Aca cargamos los respaldos/archivos desde la carpeta
+
                 reproductorcr->cargarRespaldosDesdeCarpeta(carpeta);
 
-                //Imprimir los discos cargados
+                //Imprimimos los discos cargados
+
                 reproductorcr->imprimirDiscos();
 
                 cout << "Desea regresar al menu principal? s=Si, n= No" << endl;
@@ -195,4 +258,4 @@ int main()
     }
 }
 
-
+//Terminamos :D

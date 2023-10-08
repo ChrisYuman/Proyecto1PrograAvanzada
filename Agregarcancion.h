@@ -6,6 +6,6 @@ class Agregarcancion {
 public:
     Agregarcancion(); 
 
-    static void ejecutarAgregarcancion(ReproductorCD* reproductor); // Función para ejecutar la opción "Agregar Canción"
+    static void ejecutarAgregarcancion(ReproductorCD* reproductor); // Esta funcion sirve para ejecutar la opcion "Agregar Cancion"
  
 };

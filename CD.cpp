@@ -1,4 +1,4 @@
-#include "CD.h"
+#include "CD.h" //Incluimos el .h
 
 CD::CD(const std::string& nombre) : nombre(nombre) {}
 

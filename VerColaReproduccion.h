@@ -1,6 +1,6 @@
 #pragma once
-#include "ReproductorCD.h" // Asegúrate de incluir la clase ReproductorCD
-#include "Cancion.h" // Incluye Cancion si es necesario
+#include "ReproductorCD.h" //Incluimos el .h
+#include "Cancion.h" //Incluimos el .h
 
 class VerColaReproduccion
 {
@@ -10,6 +10,6 @@ class VerColaReproduccion
         void mostrarColaReproduccion(); // Declaración de la función para mostrar la cola de reproducción
 
     private:
-        ReproductorCD& reproductor; // Miembro para mantener una referencia al reproductor
+        ReproductorCD& reproductor; // Este es el miembro para mantener una referencia al reproductor
 };
 

@@ -1,10 +1,10 @@
-#ifndef REPRODUCTORCD_H
-#define REPRODUCTORCD_H
+#ifndef REPRODUCTORCD_H // Esto nos sirve para verificar que ReproductorCD.h no este definido anteriormente en el codigo y asi
+#define REPRODUCTORCD_H // Esto nos sirve para definir el ReproductorCD.h
 
-#include "CD.h"
-#include <vector>
-#include <queue> 
-#include "Cancion.h" 
+#include "CD.h" //Incluimos el .h
+#include <vector> //Incluimos la libreria para usar vectores
+#include <queue> //Esta libreria sirve para la estructura de datos de cola
+#include "Cancion.h" //Incluimos el .h
 
 class ReproductorCD {
 public:
@@ -29,12 +29,12 @@ public:
         return colaReproduccion;
     }
 
-    // Método para agregar una canción a la cola de reproducción
+    // Este es el metodo para agregar una canción a la cola de reproducción
     void agregarCancionALaCola(const Cancion& cancion) {
         colaDeReproduccion.push_back(cancion);
     }
 
-    // Método para obtener la cola de reproducción
+    // Este es el metodo para obtener la cola de reproducción
     const std::vector<Cancion>& getColaDeReproduccion() const {
         return colaDeReproduccion;
     }
@@ -49,4 +49,5 @@ private:
     std::vector<Cancion> colaDeReproduccion;
 };
 
-#endif
+#endif // Esto sirve para marcar el final de la seccion o bien de este codigo
+

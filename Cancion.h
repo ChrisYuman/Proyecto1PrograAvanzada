@@ -1,7 +1,7 @@
-#ifndef CANCION_H
-#define CANCION_H
+#ifndef CANCION_H // Esto nos sirve para verificar que Cancion.h no este definido anteriormente en el codigo y asi
+#define CANCION_H // Esto nos sirve para definir el Cancion.h
 
-#include <string>
+#include <string> //Añadimos la biblioteca de string
 
 class Cancion {
 public:
@@ -19,4 +19,4 @@ private:
     std::string duracion;
 };
 
-#endif  // CANCION_h
+#endif  // Esto sirve para marcar el final de la seccion o bien de este codigo

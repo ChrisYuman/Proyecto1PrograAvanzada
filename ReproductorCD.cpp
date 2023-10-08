@@ -1,10 +1,10 @@
-#include "ReproductorCD.h"
+#include "ReproductorCD.h" //Incluimos el .h
 #include <iostream>
-#include <fstream>
+#include <fstream> // Esta libreria nos sirve para manipular archivos
 #include <vector>
 #include <string>
-#include <windows.h>
-#include <unordered_set> // Para detectar líneas duplicadas
+#include <windows.h> //Esta libreria nos sirve para usar funciones especificas de windows 
+#include <unordered_set> // Esta libreria nos sirvio para detectar líneas duplicadas
 
 ReproductorCD::ReproductorCD() {}
 
@@ -13,28 +13,35 @@ const std::vector<CD>& ReproductorCD::getListaCds() const {
 }
 
 void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
-    // Limpia la lista de CDs existente si se selecciona esta opción nuevamente
+    // Aca limpiamos la lista de CDs existente si se selecciona esta opción nuevamente
+
     listaCds.clear();
 
-    // Convierte la ruta de la carpeta a formato LPCWSTR
+    // Aca convertimos la ruta de la carpeta a formato LPCWSTR
+
     std::wstring carpetaW = std::wstring(carpeta.begin(), carpeta.end());
     LPCWSTR carpetaLPCWSTR = carpetaW.c_str();
 
-    // Define el patrón de búsqueda
+    // Aca definimos el patrón de búsqueda
+
     LPCWSTR patronBusqueda = L"/*.txt";
 
-    // Combina la carpeta y el patrón de búsqueda en una cadena LPCWSTR
+    // Aca combinamos la carpeta y el patrón de búsqueda en una cadena LPCWSTR
+
     std::wstring carpetaConPatron = carpetaW + L"\\*.txt";
     LPCWSTR carpetaConPatronLPCWSTR = carpetaConPatron.c_str();
 
-    // Utiliza la biblioteca <windows.h> para listar archivos en el directorio
+    // Aca utilizamos la biblioteca <windows.h> para listar archivos en el directorio
+
     WIN32_FIND_DATA findFileData;
     HANDLE hFind = FindFirstFile(carpetaConPatronLPCWSTR, &findFileData);
 
     if (hFind == INVALID_HANDLE_VALUE) {
         DWORD dwError = GetLastError();
         if (dwError != ERROR_FILE_NOT_FOUND) {
-            // Manejar errores de FindFirstFile
+
+            // Aca manejamos errores de FindFirstFile
+
             std::cerr << "Error al buscar archivos en la carpeta: " << carpeta << std::endl;
         }
         return;
@@ -45,35 +52,38 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
         std::string nombreArchivo(nombreArchivoW.begin(), nombreArchivoW.end());
         std::string rutaCompleta = carpeta + "\\" + nombreArchivo;
 
-        // Abre el archivo .txt para lectura
+        // Aca abrimos el archivo .txt para lectura
+
         std::ifstream archivo(rutaCompleta);
         if (!archivo.is_open()) {
             std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
-            continue; // Continuar con el siguiente archivo
+            continue; // Aca continuamos con el siguiente archivo
         }
 
         std::string nombreCd = nombreArchivo;
         CD cd(nombreCd);
-        bool cdVacio = true; // Bandera para verificar si el CD está vacío
+        bool cdVacio = true; // Aca verificamos si el CD está vacío
 
         std::string linea;
-        std::unordered_set<std::string> lineasDuplicadas; // Para detectar líneas duplicadas
+        std::unordered_set<std::string> lineasDuplicadas; // Aca para detectar líneas duplicadas
 
         while (std::getline(archivo, linea)) {
-            // Verifica si la línea está duplicada
+
+            // Aca verificamos si la línea está duplicada
+
             if (lineasDuplicadas.find(linea) != lineasDuplicadas.end()) {
                 std::cerr << "Error: Línea duplicada en el archivo: " << nombreArchivo << std::endl;
                 continue; // Continuar con la siguiente línea
             }
 
-            // Agrega la línea al conjunto de líneas para verificar duplicados
+            // Aca agregamos la línea al conjunto de líneas para verificar duplicados
             lineasDuplicadas.insert(linea);
 
-            // Divide la línea en nombre, artista y duración utilizando '||' como separador
+            // Aca dividimos la línea en nombre, artista y duración utilizando '||' como separador
             std::string delimiter = "||";
             size_t pos = 0;
             std::string token;
-            std::vector<std::string> tokens;  // Declaración del vector
+            std::vector<std::string> tokens;  // Aca hicimos la declaración del vector
 
             while ((pos = linea.find(delimiter)) != std::string::npos) {
                 token = linea.substr(0, pos);
@@ -95,7 +105,7 @@ void ReproductorCD::cargarRespaldosDesdeCarpeta(const std::string& carpeta) {
         archivo.close();
 
         if (!cdVacio) {
-            listaCds.push_back(cd); // Agrega el CD a la lista si no está vacío
+            listaCds.push_back(cd); // Aca agregamos el CD a la lista si no está vacío
         }
         else {
             std::cerr << "Advertencia: El CD en el archivo " << nombreArchivo << " está vacío." << std::endl;

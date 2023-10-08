@@ -7,40 +7,50 @@ Agregarcancion::Agregarcancion() {
 
 void Agregarcancion::ejecutarAgregarcancion(ReproductorCD* reproductor) {
 
-    // Llamar al método de ReproductorCD para obtener la lista de CDs
+    // Aca Llamamos al metodo de ReproductorCD para asi poder obtener la lista de los CDs
+   
     const std::vector<CD>& listaCds = reproductor->getListaCds();
 
-    // Mostrar la lista de CDs al usuario
+    //Aca mostramos la lista de los CDs al usuario:
+
     std::cout << "Lista de CDs:" << std::endl;
     for (int i = 0; i < listaCds.size(); i++) {
         std::cout << i + 1 << ". " << listaCds[i].getNombre() << std::endl;
     }
 
-    // Solicitar al usuario que elija un CD
+    // Aca solicitamos al usuario que elija un CD
+
     int opcionCd;
     std::cout << "Seleccione un CD por número: ";
     std::cin >> opcionCd;
 
-    // Verificar si la opción es válida
+    // Verificamos si la opcion es valida
+
     if (opcionCd >= 1 && opcionCd <= listaCds.size()) {
-        // Obtener el CD seleccionado por el usuario
+
+        // Aca obtenemos el CD seleccionado
+
         const CD& cdSeleccionado = listaCds[opcionCd - 1];
 
-        // Obtener la lista de canciones del CD seleccionado
+        // Aca obtenemos la lista de canciones del CD seleccionado :D
+
         const std::vector<Cancion>& listaCanciones = cdSeleccionado.getCanciones();
 
-        // Mostrar la lista de canciones del CD
+        // Aca mostramos la lista de canciones del CD
+
         std::cout << "Lista de Canciones en " << cdSeleccionado.getNombre() << ":" << std::endl;
         for (int i = 0; i < listaCanciones.size(); i++) {
             std::cout << i + 1 << ". " << listaCanciones[i].getNombre() << std::endl;
         }
 
-        // Solicitar al usuario que elija una canción
+        // Aca solcitamos al usuario que elija una canción
+
         int opcionCancion;
         std::cout << "Seleccione una cancion por numero: ";
         std::cin >> opcionCancion;
 
-        // Verificar si la opción de canción es válida
+        // Aca verificamos si la opción de la canción es válida
+
         if (opcionCancion >= 1 && opcionCancion <= listaCanciones.size()) {
             
             const Cancion& cancionSeleccionada = listaCanciones[opcionCancion - 1];

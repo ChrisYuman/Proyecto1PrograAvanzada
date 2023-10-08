@@ -1,5 +1,5 @@
-#include "Ordenar.h"
-#include <algorithm>
+#include "Ordenar.h" //Incluimos el .h 
+#include <algorithm> //Esta libreria nos sirvio para ordenar la cola de forma ascendente y descendente, usando el sort
 
 
 Ordenar::Ordenar() {}
@@ -7,7 +7,8 @@ Ordenar::Ordenar() {}
 void Ordenar::ordenarPorNombreArtistaAscendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por nombre de artista de forma ascendente
+    // Aca ordenamos la cola por nombre de artista de forma ascendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getArtista() < b.getArtista();
@@ -19,7 +20,8 @@ void Ordenar::ordenarPorNombreArtistaAscendente(ReproductorCD* reproductor) {
 void Ordenar::ordenarPorNombreArtistaDescendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por nombre de artista de forma descendente
+    // Aca ordenamos la cola por nombre de artista de forma descendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getArtista() > b.getArtista();
@@ -32,7 +34,8 @@ void Ordenar::ordenarPorNombreArtistaDescendente(ReproductorCD* reproductor) {
 void Ordenar::ordenarPorNombreCancionAscendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por nombre de la canción de forma ascendente
+    // Aca ordenamos la cola por nombre de la canción de forma ascendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getNombre() < b.getNombre();
@@ -44,7 +47,8 @@ void Ordenar::ordenarPorNombreCancionAscendente(ReproductorCD* reproductor) {
 void Ordenar::ordenarPorNombreCancionDescendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por nombre de la canción de forma descendente
+    // Aca ordenamos la cola por nombre de la canción de forma descendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getNombre() > b.getNombre();
@@ -56,7 +60,8 @@ void Ordenar::ordenarPorNombreCancionDescendente(ReproductorCD* reproductor) {
 void Ordenar::ordenarPorDuracionAscendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por duración de forma ascendente
+    // Aca ordenamos la cola por duración de forma ascendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getDuracion() < b.getDuracion();
@@ -68,7 +73,8 @@ void Ordenar::ordenarPorDuracionAscendente(ReproductorCD* reproductor) {
 void Ordenar::ordenarPorDuracionDescendente(ReproductorCD* reproductor) {
     std::vector<Cancion> colaDeReproduccion = reproductor->getColaDeReproduccion();
 
-    // Ordena la cola por duración de forma descendente
+    // Aca ordenamos la cola por duración de forma descendente
+
     std::sort(colaDeReproduccion.begin(), colaDeReproduccion.end(),
         [](const Cancion& a, const Cancion& b) {
             return a.getDuracion() > b.getDuracion();
